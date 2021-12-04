@@ -1,8 +1,22 @@
 #!/bin/bash
 
-sudo apt update
+echo "*------------------------------------- App Install Start -------------------------------------*"
 
-function install {
+sudo apt update
+sudo apt install flatpak -y
+
+function flatpak {
+  which $1 &> /dev/null
+
+  if [ $? -ne 0 ]; then
+    echo "Installing: ${1}..."
+    flatpak install flathub $1
+  else
+    echo "Already installed: ${1}"
+  fi
+}
+
+function inst {
   which $1 &> /dev/null
 
   if [ $? -ne 0 ]; then
@@ -18,40 +32,32 @@ function snap {
 
   if [ $? -ne 0 ]; then
     echo "Installing: ${1}..."
-    sudo snap install -y $1
+    sudo snap install $1
   else
     echo "Already installed: ${1}"
   fi
 }
 
-sudo apt install flatpak -y
 
-function flatpak {
-  which $1 &> /dev/null
-
-  if [ $? -ne 0 ]; then
-    echo "Installing: ${1}..."
-    flatpak install flathub -y $1
-  else
-    echo "Already installed: ${1}"
-  fi
-}
 
 
 
 # Basics
-install chromium-browser
-install curl
-install git
-install nmap
-snap code --classic
-snap spotify discord
+inst chromium-browser
+inst curl
+inst git
+inst nmap
+snap spotify
+snap discord
 flatpak io.github.shiftey.Desktop
+flatpak com.visualstudio.code
 
 
 # Image processing
-install gimp
+inst gimp
 
 # Fun stuff
-install figlet
-install lolcat
+inst figlet
+inst lolcat
+
+sudo apt autoremove -y
