@@ -1,0 +1,126 @@
+[control-center]
+last-panel='mouse'
+
+[desktop/app-folders/folders/Pop-Office]
+apps=['libreoffice-calc.desktop', 'libreoffice-draw.desktop', 'libreoffice-impress.desktop', 'libreoffice-math.desktop', 'libreoffice-startcenter.desktop', 'libreoffice-writer.desktop']
+name='Office'
+translate=true
+
+[desktop/app-folders/folders/Pop-System]
+apps=['gnome-language-selector.desktop', 'gnome-session-properties.desktop', 'gnome-system-monitor.desktop', 'im-config.desktop', 'nm-connection-editor.desktop', 'nvidia-settings.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.PowerStats.desktop', 'org.gnome.seahorse.Application.desktop', 'software-properties-gnome.desktop', 'system76-driver.desktop', 'system76-firmware.desktop']
+name='System'
+translate=true
+
+[desktop/app-folders/folders/Pop-Utility]
+apps=['com.github.donadigo.eddy.desktop', 'com.system76.Popsicle.desktop', 'gucharmap.desktop', 'info.desktop', 'org.gnome.eog.desktop', 'org.gnome.Evince.desktop', 'org.gnome.Extensions.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Screenshot.desktop', 'org.gnome.Totem.desktop', 'pop-cosmic-applications.desktop', 'pop-cosmic-launcher.desktop', 'pop-cosmic-workspaces.desktop', 'simple-scan.desktop', 'yelp.desktop']
+name='Utilities'
+translate=true
+
+[desktop/background]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///home/v/ArcPopOSLogo.jpg'
+primary-color='#000000'
+secondary-color='#000000'
+
+[desktop/input-sources]
+current=uint32 0
+sources=[('xkb', 'us')]
+xkb-options=@as []
+
+[desktop/interface]
+enable-hot-corners=true
+gtk-im-module='gtk-im-context-simple'
+gtk-theme='Pop-dark'
+
+[desktop/notifications]
+application-children=['org-gnome-terminal', 'io-elementary-appcenter']
+
+[desktop/notifications/application/io-elementary-appcenter]
+application-id='io.elementary.appcenter.desktop'
+
+[desktop/notifications/application/org-gnome-terminal]
+application-id='org.gnome.Terminal.desktop'
+
+[desktop/peripherals/mouse]
+accel-profile='adaptive'
+speed=-0.57352941176470584
+
+[desktop/peripherals/touchpad]
+two-finger-scrolling-enabled=true
+
+[desktop/privacy]
+disable-microphone=false
+report-technical-problems=false
+
+[desktop/screensaver]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/pop/kate-hazen-fractal-mountains.png'
+primary-color='#000000'
+secondary-color='#000000'
+
+[evolution-data-server]
+migrated=true
+network-monitor-gio-name=''
+
+[gedit/plugins]
+active-plugins=['spell', 'modelines', 'docinfo', 'filebrowser', 'sort']
+
+[gedit/plugins/filebrowser]
+root='file:///'
+tree-view=true
+virtual-root='file:///home/edunzer'
+
+[gedit/preferences/ui]
+show-tabs-mode='auto'
+
+[gedit/state/window]
+bottom-panel-size=140
+side-panel-active-page='GeditWindowDocumentsPanel'
+side-panel-size=200
+size=(942, 1009)
+state=87168
+
+[nautilus/preferences]
+default-folder-viewer='icon-view'
+search-filter-time-type='last_modified'
+
+[nautilus/window-state]
+initial-size=(1896, 1009)
+maximized=false
+
+[shell]
+favorite-apps=['pop-cosmic-applications.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'google-chrome.desktop', 'github-desktop.desktop']
+
+[shell/extensions/dash-to-dock]
+dash-max-icon-size=25
+dock-fixed=false
+dock-position='BOTTOM'
+extend-height=false
+intellihide=false
+manualhide=false
+multi-monitor=true
+show-mounts=true
+
+[shell/extensions/pop-cosmic]
+overlay-key-action='LAUNCHER'
+show-applications-button=true
+show-workspaces-button=false
+
+[shell/extensions/pop-shell]
+gap-inner=uint32 3
+gap-outer=uint32 3
+tile-by-default=true
+
+[system/location]
+enabled=false
+
+[terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-transparency-percent=16
+cursor-shape='underline'
+default-size-columns=115
+default-size-rows=50
+font='Ubuntu Mono 12'
+use-theme-transparency=false
+use-transparent-background=true
