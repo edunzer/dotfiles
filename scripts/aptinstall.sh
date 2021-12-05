@@ -9,6 +9,7 @@ sudo apt install flatpak -y
 sudo apt install curl -y
 sudo apt install git -y
 sudo apt install nmap -y 
+sudo apt install gnome-tweaks -y
 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb 
