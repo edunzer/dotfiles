@@ -1,5 +1,5 @@
 [control-center]
-last-panel='mouse'
+last-panel='display'
 
 [desktop/app-folders/folders/Pop-Office]
 apps=['libreoffice-calc.desktop', 'libreoffice-draw.desktop', 'libreoffice-impress.desktop', 'libreoffice-math.desktop', 'libreoffice-startcenter.desktop', 'libreoffice-writer.desktop']
@@ -19,7 +19,7 @@ translate=true
 [desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/v/ArcPopOSLogo.jpg'
+picture-uri='file:///home/edunzer/Pictures/Wallpapers/ArcPopOSLogo.jpg'
 primary-color='#000000'
 secondary-color='#000000'
 
@@ -70,7 +70,7 @@ active-plugins=['spell', 'modelines', 'docinfo', 'filebrowser', 'sort']
 [gedit/plugins/filebrowser]
 root='file:///'
 tree-view=true
-virtual-root='file:///home/edunzer'
+virtual-root='file:///home/edunzer/.config/dconf'
 
 [gedit/preferences/ui]
 show-tabs-mode='auto'
@@ -79,19 +79,20 @@ show-tabs-mode='auto'
 bottom-panel-size=140
 side-panel-active-page='GeditWindowDocumentsPanel'
 side-panel-size=200
-size=(942, 1009)
+size=(900, 1014)
 state=87168
 
 [nautilus/preferences]
 default-folder-viewer='icon-view'
 search-filter-time-type='last_modified'
+search-view='list-view'
 
 [nautilus/window-state]
 initial-size=(1896, 1009)
 maximized=false
 
 [shell]
-favorite-apps=['pop-cosmic-applications.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'google-chrome.desktop', 'github-desktop.desktop']
+favorite-apps=['pop-cosmic-applications.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'google-chrome.desktop', 'com.discordapp.Discord.desktop', 'io.github.shiftey.Desktop.desktop', 'com.visualstudio.code.desktop', 'com.spotify.Client.desktop']
 
 [shell/extensions/dash-to-dock]
 dash-max-icon-size=25
