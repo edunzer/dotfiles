@@ -1,5 +1,8 @@
 #!/bin/bash
 
+sudo apt install figlet -y
+sudo apt install lolcat -y
+
 # progress bar function
 
 prog() {
@@ -21,10 +24,12 @@ chmod +x setup.sh
 chmod +x symlink.sh
 
 figlet "Preparing Files!"
+
 for x in {1..100} ; do
     prog "$x" still working...
     sleep .05   # do some work here
 done ; echo
+
 sleep 2 # Waits x second.
 clear
 
