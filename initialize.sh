@@ -1,6 +1,9 @@
 #!/bin/bash
 
-sudo apt-get update -y && sudo apt-get upgrade -y
+
+figlet "Time to get some upgrades?"
+sudo apt-get update 
+sudo apt-get upgrade 
 
 sudo apt install figlet -y
 sudo apt install lolcat -y
