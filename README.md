@@ -4,7 +4,7 @@ My personal set-up scripts. Used in Pop OS 21.04 Distro.
 
 ## Included `scripts/`
 
-- `symlink.sh` sets up symbolic links in `$HOME`
-- `aptinstall.sh` owns Ubuntu repository installs
-- `desktop.sh` champions granular executive desktop environment settings
-- `setup.sh` facilitates the scalable and proactive deliverables of running all the scripts and `apt upgrade`
+- `symlink.sh` sets up symbolic links in `$HOME`.
+- `aptinstall.sh` sets up repository installs.
+- `desktop.sh` setups desktop environment settings.
+- `setup.sh` collects all the scripts and executes them.
