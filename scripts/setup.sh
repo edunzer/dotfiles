@@ -1,5 +1,8 @@
 #!/bin/bash
 
+sudo apt install figlet -y
+sudo apt install lolcat -y
+
 ./symlink.sh
 ./aptinstall.sh
 ./desktop.sh
