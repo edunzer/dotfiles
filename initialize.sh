@@ -12,20 +12,22 @@ chmod +x symlink.sh
 
 # Fun start
 figlet "Starting Initialization!" | lolcat
-sleep .5 # Waits 0.5 second.
+sleep 2 # Waits x second.
 figlet "5"
-sleep .5 # Waits 0.5 second. 
+sleep 1 # Waits x second. 
 figlet "4" 
-sleep .5 # Waits 0.5 second.
+sleep 1 # Waits x second.
 figlet "3" 
-sleep .5 # Waits 0.5 second.
+sleep 1 # Waits x second.
 figlet "2" 
-sleep .5 # Waits 0.5 second.
+sleep 1 # Waits x second.
 figlet "1" 
-sleep .5 # Waits 0.5 second.
+sleep 1 # Waits x second.
+figlet "Initialize!" | lolcat
+sleep 1 # Waits x second.
 
 # Clear terminal
 clear
 
 # Setup command run
-./setup.sh
+#./setup.sh
