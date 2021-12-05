@@ -16,4 +16,4 @@ My personal set-up scripts. Used in Pop OS 21.04 Distro.
 
 ## Usage Hints 
 
-- After cloning the repo use the `initialize.sh` file to start and make sure that its executable buy using chmod +x `initialize.sh`. This file will go through and make all other `.sh` files executable and then run the `setup.sh` file. 
+- After cloning the repo use the `initialize.sh` file to start. Make sure that its executable by using chmod +x `initialize.sh`. This file will go through and make all other `.sh` files executable and then run the `setup.sh` file. 
