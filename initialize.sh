@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-figlet "Time to get some upgrades?"
+echo "Time to get some upgrades?"
 sudo apt-get update 
 sudo apt-get upgrade 
 
