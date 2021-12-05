@@ -13,21 +13,13 @@ chmod +x symlink.sh
 # Fun start
 figlet "Starting Initialization!" | lolcat
 sleep 2 # Waits x second.
-figlet "5"
-sleep 1 # Waits x second. 
-figlet "4" 
-sleep 1 # Waits x second.
-figlet "3" 
-sleep 1 # Waits x second.
-figlet "2" 
-sleep 1 # Waits x second.
-figlet "1" 
+
+i=$((1*10)); while [ $i -gt 0 ]; do clear; echo $i | figlet; sleep 1; i=$(($i-1)); done; #countdown timer
+
+clear
 sleep 1 # Waits x second.
 figlet "Initialize!" | lolcat
 sleep 1 # Waits x second.
 
-# Clear terminal
-clear
-
 # Setup command run
-#./setup.sh
+./setup.sh
