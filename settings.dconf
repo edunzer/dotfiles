@@ -23,15 +23,21 @@ picture-uri='file:///home/edunzer/Pictures/Wallpapers/ArcPopOSLogo.jpg'
 primary-color='#000000'
 secondary-color='#000000'
 
+[desktop/calendar]
+show-weekdate=false
+
 [desktop/input-sources]
 current=uint32 0
 sources=[('xkb', 'us')]
 xkb-options=@as []
 
 [desktop/interface]
+clock-show-seconds=true
+clock-show-weekday=true
 enable-hot-corners=true
 gtk-im-module='gtk-im-context-simple'
 gtk-theme='Pop-dark'
+show-battery-percentage=false
 
 [desktop/notifications]
 application-children=['org-gnome-terminal', 'io-elementary-appcenter']
@@ -59,6 +65,9 @@ picture-options='zoom'
 picture-uri='file:///usr/share/backgrounds/pop/kate-hazen-fractal-mountains.png'
 primary-color='#000000'
 secondary-color='#000000'
+
+[desktop/wm/preferences]
+button-layout='appmenu:minimize,maximize,close'
 
 [evolution-data-server]
 migrated=true
@@ -88,8 +97,12 @@ search-filter-time-type='last_modified'
 search-view='list-view'
 
 [nautilus/window-state]
-initial-size=(1896, 1009)
+initial-size=(890, 550)
 maximized=false
+
+[settings-daemon/plugins/xsettings]
+antialiasing='grayscale'
+hinting='slight'
 
 [shell]
 favorite-apps=['pop-cosmic-applications.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'google-chrome.desktop', 'com.discordapp.Discord.desktop', 'io.github.shiftey.Desktop.desktop', 'com.visualstudio.code.desktop', 'com.spotify.Client.desktop']
