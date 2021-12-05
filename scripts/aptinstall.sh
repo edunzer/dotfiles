@@ -5,59 +5,23 @@ echo "*------------------------------------- App Install Start -----------------
 sudo apt update
 sudo apt install flatpak -y
 
-function flatpak {
-  which $1 &> /dev/null
-
-  if [ $? -ne 0 ]; then
-    echo "Installing: ${1}..."
-    flatpak install flathub $1
-  else
-    echo "Already installed: ${1}"
-  fi
-}
-
-function inst {
-  which $1 &> /dev/null
-
-  if [ $? -ne 0 ]; then
-    echo "Installing: ${1}..."
-    sudo apt install -y $1
-  else
-    echo "Already installed: ${1}"
-  fi
-}
-
-function snap {
-  which $1 &> /dev/null
-
-  if [ $? -ne 0 ]; then
-    echo "Installing: ${1}..."
-    sudo snap install $1
-  else
-    echo "Already installed: ${1}"
-  fi
-}
-
-
-
-
-
 # Basics
-inst chromium-browser
-inst curl
-inst git
-inst nmap
-snap spotify
-snap discord
-flatpak io.github.shiftey.Desktop
-flatpak com.visualstudio.code
+sudo apt install curl -y
+sudo apt install git -y
+sudo apt install nmap -y 
 
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb 
+flatpak install flathub io.github.shiftey.Desktop -y
+flatpak install flathub com.visualstudio.code -y
+flatpak install flathub com.spotify.Client -y
+flatpak install flathub com.discordapp.Discord -y
 
 # Image processing
-inst gimp
+sudo apt install gimp -y
 
 # Fun stuff
-inst figlet
-inst lolcat
+sudo apt install figlet -y
+sudo apt install lolcat -y
 
 sudo apt autoremove -y
