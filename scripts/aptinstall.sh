@@ -3,7 +3,7 @@
 echo "*------------------------------------- App Install Start -------------------------------------*"
 
 sudo apt update
-sudo apt install flatpak -y
+sudo apt install flatpak 
 
 # Basics
 sudo apt install curl -y
