@@ -19,7 +19,7 @@ translate=true
 [desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/edunzer/Pictures/Wallpapers/ArcPopOSLogo.jpg'
+picture-uri=''
 primary-color='#000000'
 secondary-color='#000000'
 
