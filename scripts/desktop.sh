@@ -10,4 +10,4 @@ cd ~
 cd dotfiles/
 dconf load /org/gnome/ < settings.dconf
 
-gsettings set org.gnome.desktop.background picture-uri file:////home/v/dotfiles/img/MountainRangePopLogo.jpg
+gsettings set org.gnome.desktop.background picture-uri file:////home/usr/dotfiles/img/MountainRangePopLogo.jpg
