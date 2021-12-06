@@ -1,24 +1,38 @@
 #!/bin/bash
 
+sudo apt install figlet -y
+sudo apt install lolcat -y
+clear
 
-echo "Time to get some upgrades?"
+figlet "Time to get some upgrades?"
+
+sleep 2 # Waits x second.
+
 sudo apt-get update 
 sudo apt-get upgrade 
 
-sudo apt install figlet -y
-sudo apt install lolcat -y
+echo "*------------------------------------- Upgrade Complete! -------------------------------------*"
 
+sleep 2 # Waits x second.
 clear
 
 # progress bar function
 
-prog() {
-    local w=80 p=$1;  shift
-    # create a string of spaces, then change them to dots
-    printf -v dots "%*s" "$(( $p*$w/100 ))" ""; dots=${dots// /.};
-    # print those dots on a fixed-width space plus the percentage etc. 
-    printf "\r\e[K|%-*s| %3d %% %s" "$w" "$dots" "$p" "$*"; 
+function ProgressBar {
+# Process data
+    let _progress=(${1}*100/${2}*100)/100
+    let _done=(${_progress}*4)/10
+    let _left=40-$_done
+# Build progressbar string lengths
+    _fill=$(printf "%${_done}s")
+    _empty=$(printf "%${_left}s")
+# Output example: Progress : [########################################] 100%
+printf "\rProgress : [${_fill// /#}${_empty// /-}] ${_progress}%%"
 }
+# Variables
+_start=1
+# This accounts as the "totalState" variable for the ProgressBar function
+_end=100
 
 # Enter directory
 cd ~
@@ -32,10 +46,13 @@ chmod +x symlink.sh
 
 figlet "Preparing Files!"
 
-for x in {1..100} ; do
-    prog "$x" still working...
-    sleep .05   # do some work here
-done ; echo
+# Proof of concept
+for number in $(seq ${_start} ${_end})
+do
+    sleep 0.1
+    ProgressBar ${number} ${_end}
+done
+printf '\nFinished!\n'
 
 sleep 2 # Waits x second.
 clear
