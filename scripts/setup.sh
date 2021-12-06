@@ -15,12 +15,3 @@ source ~/.bashrc
 
 # Fun hello
 figlet "... Setup Complete!" | lolcat
-
-while true; do
-    read -p "Do you want to delete the dotfiles cloned directory? [y/n]" yn
-    case $yn in
-        [Yy]* ) cd ~; rm -r dotfiles/;  break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
