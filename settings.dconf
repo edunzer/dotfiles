@@ -19,7 +19,7 @@ translate=true
 [desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri=''
+picture-uri='file:////home/usr/dotfiles/img/MountainRangePopLogo.jpg'
 primary-color='#000000'
 secondary-color='#000000'
 
