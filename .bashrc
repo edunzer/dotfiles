@@ -17,13 +17,9 @@ function newdirectory () {
 # Update/Upgrade/Autoremove alias
 alias update='sudo apt-get update && echo "*------------------- Update Finished -------------------*" && sudo apt-get upgrade -y && echo "*------------------- Upgrade Finished -------------------*"'
 
-
-
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 
 ################################################################################
 ##  FUNCTIONS                                                                 ##
@@ -65,9 +61,6 @@ bash_prompt_command() {
 	fi
 }
 
-
-
-
 ##
 ##	GENERATE A FORMAT SEQUENCE
 ##
@@ -92,8 +85,6 @@ format_font()
 		;;
 	esac
 }
-
-
 
 ##
 ## COLORIZE BASH PROMT
@@ -152,21 +143,13 @@ bash_prompt() {
 	local WHITE_BOLD="\[\033[1;38;5;15m\]"
 	local GRAY_BOLD="\[\033[1;90m\]"
 	local BLUE_BOLD="\[\033[1;38;5;74m\]"
-	
-	
-	
-	
-	
+
 	##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  
 	  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##
 	##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ## 
 
-	
-	
 	##                          CONFIGURE HERE                                ##
 
-	
-	
 	############################################################################
 	## CONFIGURATION                                                          ##
 	## Choose your color combination here                                     ##
@@ -185,7 +168,6 @@ bash_prompt() {
 	
 	local PROMT_FORMAT=$BLUE_BOLD
 
-	
 	############################################################################
 	## EXAMPLE CONFIGURATIONS                                                 ##
 	## I use them for different hosts. Test them out ;)                       ##
@@ -242,9 +224,6 @@ bash_prompt() {
 	  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##
 	##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ## 	
 
-	
-	
-	
 	############################################################################
 	## TEXT FORMATING                                                         ##
 	## Generate the text formating according to configuration                 ##
@@ -267,7 +246,6 @@ bash_prompt() {
 	BG4=$(($BACKGROUND_4+$BG))
 	FE4=$(($TEXTEFFECT_4+$EFFECT))
 	
-
 	## CALL FORMATING HELPER FUNCTION: effect + font color + BG color
 	local TEXT_FORMAT_1
 	local TEXT_FORMAT_2
@@ -278,13 +256,11 @@ bash_prompt() {
 	format_font TEXT_FORMAT_3 $FC3 $FE3 $BG3
 	format_font TEXT_FORMAT_4 $FC4 $FE4 $BG4
 	
-	
 	# GENERATE PROMT SECTIONS
 	local PROMT_USER=$"$TEXT_FORMAT_1 \u "
 	local PROMT_HOST=$"$TEXT_FORMAT_2 \h "
 	local PROMT_PWD=$"$TEXT_FORMAT_3 \${NEW_PWD} "
 	local PROMT_INPUT=$"$PROMT_FORMAT "
-
 
 	############################################################################
 	## SEPARATOR FORMATING                                                    ##
@@ -302,7 +278,6 @@ bash_prompt() {
 	TSFC3=$(($BACKGROUND_3+$COLOR))
 	TSBG3=$(($DEFAULT+$BG))
 	
-
 	## CALL FORMATING HELPER FUNCTION: effect + font color + BG color
 	local SEPARATOR_FORMAT_1
 	local SEPARATOR_FORMAT_2
@@ -311,14 +286,11 @@ bash_prompt() {
 	format_font SEPARATOR_FORMAT_2 $TSFC2 $TSBG2
 	format_font SEPARATOR_FORMAT_3 $TSFC3 $TSBG3
 	
-
 	# GENERATE SEPARATORS WITH FANCY TRIANGLE
 	local TRIANGLE=$'\uE0B0'	
 	local SEPARATOR_1=$SEPARATOR_FORMAT_1$TRIANGLE
 	local SEPARATOR_2=$SEPARATOR_FORMAT_2$TRIANGLE
 	local SEPARATOR_3=$SEPARATOR_FORMAT_3$TRIANGLE
-
-
 
 	############################################################################
 	## WINDOW TITLE                                                           ##
@@ -333,23 +305,16 @@ bash_prompt() {
 		;;
 	esac
 
-
-
 	############################################################################
 	## BASH PROMT                                                             ##
 	## Generate promt and remove format from the rest                         ##
 	############################################################################
 	PS1="$TITLEBAR\n${PROMT_USER}${SEPARATOR_1}${PROMT_HOST}${SEPARATOR_2}${PROMT_PWD}${SEPARATOR_3}${PROMT_INPUT}"
 
-	
-
 	## For terminal line coloring, leaving the rest standard
 	none="$(tput sgr0)"
 	trap 'echo -ne "${none}"' DEBUG
 }
-
-
-
 
 ################################################################################
 ##  MAIN                                                                      ##
@@ -366,7 +331,5 @@ PROMPT_COMMAND=bash_prompt_command
 ##	which gets updated by $PROMT_COMMAND on behalf of the terminal
 bash_prompt
 unset bash_prompt
-
-
 
 ### EOF ###
