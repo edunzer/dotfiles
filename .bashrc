@@ -12,6 +12,10 @@ function newdirectory () {
 }
 
 alias tree='\tree --dirsfirst -C'
+alias path='echo -e ${PATH//:/\\n}'
+alias now='date +"%T"'
+alias nowtime=now
+alias nowdate='date +"%d-%m-%Y"'
 
 # Update/Upgrade/Autoremove alias
 alias update='sudo apt-get update && echo "*------------------- Update Finished -------------------*" && sudo apt-get upgrade -y && echo "*------------------- Upgrade Finished -------------------*"'
