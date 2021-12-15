@@ -1,4 +1,27 @@
 
+alias tree='\tree --dirsfirst -C'
+alias path='echo -e ${PATH//:/\\n}'
+alias now='date +"%T"'
+alias nowtime=now
+alias nowdate='date +"%d-%m-%Y"'
+alias cputemp='sensors | grep Core'
+
+#Git
+alias pull = 'git pull origin master'
+alias add = 'git add --all'
+alias push = 'git push --all'
+function commit() {
+   add
+   message=""
+   for arg in "$@"
+   do
+      message += "$arg"
+      message += " "
+   done
+   git commit -m "$message"
+   push
+}
+
 # Show contents of dir after action
 function cd () {
     builtin cd "$1"
@@ -11,11 +34,38 @@ function newdirectory () {
     cd $1
 }
 
-alias tree='\tree --dirsfirst -C'
-alias path='echo -e ${PATH//:/\\n}'
-alias now='date +"%T"'
-alias nowtime=now
-alias nowdate='date +"%d-%m-%Y"'
+# Show some system information
+function myinfo () {
+  printf "CPU: "
+  cat /proc/cpuinfo | grep "model name" | head -1 | awk '{ for (i = 4; i <= NF; i++) printf "%s ", $i }'
+  printf "\n"
+
+  cat /etc/issue | awk '{ printf "OS: %s %s %s %s | " , $1 , $2 , $3 , $4 }'
+  uname -a | awk '{ printf "Kernel: %s " , $3 }'
+  uname -m | awk '{ printf "%s | " , $1 }'
+  kded4 --version | grep "KDE Development Platform" | awk '{ printf "KDE: %s", $4 }'
+  printf "\n"
+  uptime | awk '{ printf "Uptime: %s %s %s", $3, $4, $5 }' | sed 's/,//g'
+  printf "\n"
+  cputemp | head -1 | awk '{ printf "%s %s %s\n", $1, $2, $3 }'
+  cputemp | tail -1 | awk '{ printf "%s %s %s\n", $1, $2, $3 }'
+  #cputemp | awk '{ printf "%s %s", $1 $2 }'
+}
+
+# Will parse the output of the df command to only show disk space on /dev/sd* and /mnt/* mounted partitions
+function ssd () {
+  echo "Device         Total  Used  Free  Pct MntPoint"
+  df -h | grep "/dev/sd"
+  df -h | grep "/mnt/"
+}
+
+# Shows uptime using a shorter formula
+function myuptime () {
+  uptime | awk '{ print "Uptime:", $3, $4, $5 }' | sed 's/,//g'
+  return;
+}
+
+
 
 # Update/Upgrade/Autoremove alias
 alias update='sudo apt-get update && echo "*------------------- Update Finished -------------------*" && sudo apt-get upgrade -y && echo "*------------------- Upgrade Finished -------------------*"'
