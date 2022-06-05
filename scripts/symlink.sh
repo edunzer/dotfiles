@@ -31,7 +31,6 @@ function linkDotfile {
   ln -s ${dotfilesDir}/${1} ${dest}
 }
 
-linkDotfile .vimrc
 linkDotfile .bashrc
 linkDotfile .bash_profile
 
